@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="zh-cn" xml:lang="zh-cn">
+<head>
+    <title>分省能源数据可视化练习 (提交作业阶段)</title>
+    <link rel="icon" href="http://e.nfu.edu.cn/theme/image.php/adaptable/theme/1559194777/favicon" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, 分省能源数据可视化练习 (提交作业阶段)" />
+<link rel="stylesheet" type="text/css" href="http://e.nfu.edu.cn/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="http://e.nfu.edu.cn/theme/styles.php/adaptable/1559194777_1/all" />
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"http:\/\/e.nfu.edu.cn","sesskey":"y3YKCwNwif","themerev":"1559194777","slasharguments":1,"theme":"adaptable","iconsystemmodule":"core\/icon_system_standard","jsrev":"1559194777","admin":"admin","svgicons":true,"usertimezone":"\u4e9a\u6d32\/\u4e0a\u6d77","contextid":11199};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"http:\/\/e.nfu.edu.cn\/lib\/yuilib\/3.17.2\/","comboBase":"http:\/\/e.nfu.edu.cn\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"http:\/\/e.nfu.edu.cn\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"http:\/\/e.nfu.edu.cn\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"http:\/\/e.nfu.edu.cn\/theme\/yui_combo.php?m\/1559194777\/","combine":true,"comboBase":"http:\/\/e.nfu.edu.cn\/theme\/yui_combo.php?","ext":false,"root":"m\/1559194777\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"http:\/\/e.nfu.edu.cn\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"http:\/\/e.nfu.edu.cn\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1559194777\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"http:\/\/e.nfu.edu.cn\/lib\/javascript.php\/1559194777\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"http:\/\/e.nfu.edu.cn\/lib\/javascript.php\/1559194777\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+    <!-- CSS print media -->
+    <link rel="stylesheet" type="text/css" href="http://e.nfu.edu.cn/theme/adaptable/style/print.css" media="print">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+    <meta name="twitter:site" value="中山大学南方学院在线学习系统" />
+    <meta name="twitter:title" value="分省能源数据可视化练习 (提交作业阶段)" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="分省能源数据可视化练习 (提交作业阶段)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://e.nfu.edu.cn" />
+    <meta name="og:site_name" value="中山大学南方学院在线学习系统" />
+
+    <!-- Chrome, Firefox OS and Opera on Android -->
+    <meta name="theme-color" content="#009688" />
+
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#009688" />
+
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#009688" />
+
+    <!-- Load FA icons -->
+    <link rel="stylesheet" href="http://e.nfu.edu.cn/theme/adaptable/style/font-awesome.min.css">
+
+        <!-- Load Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400i'
+    rel='stylesheet'
+    type='text/css'>
+    
+            <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,400i'
+        rel='stylesheet'
+        type='text/css'>
+    
+            <link href='https://fonts.googleapis.com/css?family=Audiowide:400,400i'
+        rel='stylesheet'
+        type='text/css'>
+    </head>
+
+<body  id="page-mod-workshop-view" class="format-weeks  path-mod path-mod-workshop chrome dir-ltr lang-zh_cn yui-skin-sam yui3-skin-sam e-nfu-edu-cn pagelayout-incourse course-53 context-11199 cmid-1156 category-4 two-column  has-region-side-post used-region-side-post has-region-course-section-a empty-region-course-section-a side-post-only">
+
+<div class="skiplinks">
+    <a href="#maincontent" class="skip">跳到主要内容</a>
+</div><script type="text/javascript" src="http://e.nfu.edu.cn/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script type="text/javascript" src="http://e.nfu.edu.cn/theme/jquery.php/core/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/theme/jquery.php/theme_adaptable/pace-min.js"></script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/theme/jquery.php/theme_adaptable/jquery-flexslider-min.js"></script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/theme/jquery.php/theme_adaptable/tickerme.js"></script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/theme/jquery.php/theme_adaptable/jquery-easing-min.js"></script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/theme/jquery.php/theme_adaptable/adaptable.js"></script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/lib/javascript.php/1559194777/lib/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+<div id="page" class="container-fluid fullin showblockicons">
+
+    <header id="page-header-wrapper"  >
+    <div id="above-header">
+        <div class="clearfix container userhead">
+            <div class="pull-left">
+                <ul class="usermenu2 nav navbar-nav navbar-right"></ul>            </div>
+
+            <div class="headermenu row">
+        <div class="dropdown secondone">
+            <a class="dropdown-toggle usermendrop" data-toggle="dropdown">
+
+<img src="http://e.nfu.edu.cn/pluginfile.php/514/user/icon/adaptable/f1?rev=56020" class="userpicture" width="80" height="80" alt="网新16级1班卢佳燕的头像" title="网新16级1班卢佳燕的头像" />网新16级1班卢佳燕                <span class="fa fa-angle-down"></span>
+            </a>
+
+    <ul class="dropdown-menu usermen" role="menu">
+
+<li><a href="http://e.nfu.edu.cn/my" title="个人主页"><i class="fa fa-dashboard"></i>个人主页</a></li><li><a href="http://e.nfu.edu.cn/user/profile.php" title="查看个人资料"><i class="fa fa-user"></i>查看个人资料</a></li><li><a href="http://e.nfu.edu.cn/user/edit.php" title="编辑个人资料"><i class="fa fa-cog"></i>编辑个人资料</a></li><li><a href="http://e.nfu.edu.cn/grade/report/overview/index.php" title="成绩"><i class="fa fa-list-alt"></i>成绩</a></li><li><a href="http://e.nfu.edu.cn/user/preferences.php" title="使用偏好"><i class="fa fa-cog"></i>使用偏好</a></li><li><a href="http://e.nfu.edu.cn/calendar/view.php" title="日历"><i class="fa fa-calendar"></i>日历</a></li><li><a href="http://e.nfu.edu.cn/login/logout.php?sesskey=y3YKCwNwif" title="退出登录"><i class="fa fa-sign-out"></i>退出登录</a></li>
+    </ul>
+</div>
+</div>
+
+<div style="float: right; position: relative; display: inline; margin-left: 15px; height:20px;">
+<ul class="nav navbar-nav"><li class="dropdown langmenu"><a href="http://e.nfu.edu.cn/mod/workshop/view.php?id=1156" class="dropdown-toggle" data-toggle="dropdown" title="语言"><i class="fa fa-globe fa-lg"></i><span class="langdesc">简体中文 ‎(zh_cn)‎</span></a><ul class="dropdown-menu"><li><a title="简体中文 ‎(zh_cn)‎" href="http://e.nfu.edu.cn/mod/workshop/view.php?id=1156&amp;lang=zh_cn">简体中文 ‎(zh_cn)‎</a></li><li><a title="English ‎(en)‎" href="http://e.nfu.edu.cn/mod/workshop/view.php?id=1156&amp;lang=en">English ‎(en)‎</a></li></ul></ul></div>
+
+<div class="pull-right popover-region collapsed">
+    <a id="message-drawer-toggle-5dcfbaf1578205dcfbaf1518c733" class="nav-link d-inline-block popover-region-toggle position-relative" href="#">
+        <img class="icon " alt="消息菜单开关" title="消息菜单开关" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/message" />
+        <div class="count-container hidden" data-region="count-container">0</div>
+    </a>
+</div><div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="121"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-5dcfbaf1582ae5dcfbaf1518c734"
+        aria-haspopup="true"
+        aria-label="显示没有新通知的通知窗口"
+        tabindex="0">
+                <img class="icon " alt="通知菜单开关" title="通知菜单开关" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/notifications" />
+        <div class="count-container hidden" data-region="count-container">0</div>
+
+    </div>
+    <div 
+        id="popover-region-container-5dcfbaf1582ae5dcfbaf1518c734"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="通知窗口"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">通知</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="全部标为已读"
+           data-action="mark-all-read"
+           role="button">
+            <span class="normal-icon"><img class="icon " alt="全部标为已读" title="全部标为已读" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/markasread" /></span>
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+        </a>
+        <a href="http://e.nfu.edu.cn/message/notificationpreferences.php?userid=121"
+           title="通知偏好">
+            <img class="icon " alt="通知偏好" title="通知偏好" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/settings" />
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">您没有通知</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+        </div>
+                <a class="see-all-link"
+                    href="http://e.nfu.edu.cn/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">查看所有</div>
+                    </div>
+                </a>
+    </div>
+</div>    </div>
+</div>
+
+
+
+<div id="page-header" class="clearfix container">
+
+<div id="sitetitle"><h1>交互式数据可视化 ...<h1></div>
+            <div class="socialbox pull-right">
+                <div class="socialbox"></div>            </div>
+            
+    
+        <div id="course-header">
+                    </div>
+    </div>
+
+
+    <div id="navwrap">
+        <div class="container">
+            <div class="navbar">
+                <nav role="navigation" class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse collapse ">
+                            <ul class="nav navbar-nav"><li><a title="" href="http://e.nfu.edu.cn/?redirect=0"><i class="fa fa-home"></i> 首页</a></li><li><a title="" href="http://e.nfu.edu.cn/my/index.php"><i class="fa fa-dashboard"></i>  个人主页</a></li><li><a title="" href="http://e.nfu.edu.cn/calendar/view.php"><i class="fa fa-calendar"></i> 事件</a></li><li class="dropdown"><a href="http://e.nfu.edu.cn/my/index.php" class="dropdown-toggle" data-toggle="dropdown" title=""><i class="fa fa-briefcase"></i> 我的课程</a><ul class="dropdown-menu"><li><a title="交互式数据可视化" href="http://e.nfu.edu.cn/course/view.php?id=53">Interactive_Visual_201908</a></li><li><a title="文献综述写作_201809" href="http://e.nfu.edu.cn/course/view.php?id=20">Lit_Review_201809</a></li><li><a title="APP设计与应用_201809" href="http://e.nfu.edu.cn/course/view.php?id=19">APP_design_201809</a></li><li><a title="API、机器学习与人工智能_201809" href="http://e.nfu.edu.cn/course/view.php?id=18">API_ML_AI_201809</a></li><li><a title="网站运营与管理（实践）_201803" href="http://e.nfu.edu.cn/course/view.php?id=15">Web_Operations_201803</a></li><li><a title="Python语言_201702" href="http://e.nfu.edu.cn/course/view.php?id=6">Python_201702</a></li></ul><li class="dropdown"><a href="http://e.nfu.edu.cn/mod/workshop/view.php?id=1156" class="dropdown-toggle" data-toggle="dropdown" title=""><i class="fa fa-sitemap"></i><span class="menutitle">本课程</span></a><ul class="dropdown-menu"><li><a title="" href="http://e.nfu.edu.cn/user/index.php?id=53"><i class="fa fa-users"></i>Participants</a></li><li><a title="" href="http://e.nfu.edu.cn/grade/report/index.php?id=53"><img class="icon icon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/grades" />成绩</a></li><li><a href="http://e.nfu.edu.cn/mod/workshop/index.php?id=53"><img class="icon icon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/workshop/1559194777/icon" />互动评价</a></li><li><a href="http://e.nfu.edu.cn/mod/forum/index.php?id=53"><img class="icon icon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/forum/1559194777/icon" />讨论区</a></li><li><a href="http://e.nfu.edu.cn/course/resources.php?id=53"><img class="icon icon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/mod_page/1559194777/icon" />资源库</a></li><li><a href="http://e.nfu.edu.cn/mod/assign/index.php?id=53"><img class="icon icon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/assign/1559194777/icon" />作业</a></li></ul></ul><ul class="nav navbar-nav"></ul>
+        <ul class="nav pull-right">
+           <li class="hbl">
+               <a href="javascript:void(0);" class="moodlezoom" title="隐藏版块">
+                   <i class="fa fa-indent fa-lg"></i>
+               <span class="zoomdesc">隐藏版块</span>
+           </a>
+       </li>
+       <li class="sbl">
+               <a href="javascript:void(0);" class="moodlezoom" title="显示版块">
+               <i class="fa fa-outdent fa-lg"></i>
+               <span class="zoomdesc">显示版块</span>
+           </a>
+       </li>
+        <li class="hbll">
+            <a href="javascript:void(0);" class="moodlewidth" title="全屏">
+                <i class="fa fa-expand fa-lg"></i>
+                <span class="zoomdesc">全屏</span>
+            </a>
+        </li>
+        <li class="sbll">
+            <a href="javascript:void(0);" class="moodlewidth" title="标准视图">
+                <i class="fa fa-compress fa-lg"></i>
+                <span class="zoomdesc">标准视图</span>
+            </a>
+            </li>
+        </ul>
+                            <div id="edittingbutton" class="pull-right breadcrumb-button">
+                                                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="container outercont">
+    <div id="page-content" class="row-fluid">
+        <div id="page-navbar" class="span12"><ul class="breadcrumb"><i title="首页" class="fa fa-folder-open-o fa-lg"></i><span class="separator"><i class="fa-angle-right fa"></i>
+                             </span><li><span tabindex="0">我的课程</span></li><span class="separator"><i class="fa-angle-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="http://e.nfu.edu.cn/course/index.php?categoryid=4"><span itemprop="title">网络与新媒体</span></a></span></li><span class="separator"><i class="fa-angle-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" title="交互式数据可视化" href="http://e.nfu.edu.cn/course/view.php?id=53"><span itemprop="title">Interactive_Visual_201908</span></a></span></li><span class="separator"><i class="fa-angle-right fa"></i>
+                             </span><li><span tabindex="0">第十一周</span></li><span class="separator"><i class="fa-angle-right fa"></i>
+                             </span><li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" title="互动评价" aria-current="page" href="http://e.nfu.edu.cn/mod/workshop/view.php?id=1156"><span itemprop="title">分省能源数据可视化练习</span></a></span></li></ul></div>
+        <section id="region-main" class="span9 pull-right">
+            <span class="notifications" id="user-notifications"></span><div role="main"><span id="maincontent"></span><h2>分省能源数据可视化练习<span class="helptooltip">
+    <a href="http://e.nfu.edu.cn/help.php?component=workshop&amp;identifier=userplan&amp;lang=zh_cn" title="关于“互动评价计划表”的帮助" aria-haspopup="true" target="_blank"><img class="icon iconhelp" alt="关于“互动评价计划表”的帮助" title="关于“互动评价计划表”的帮助" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/help" /></a>
+</span></h2><h3 id="mod_workshop-userplanheading">提交作业阶段</h3><div class="userplan" aria-labelledby="mod_workshop-userplanheading" aria-describedby="mod_workshop-userplanaccessibilitytitle"><span class="accesshide" id="mod_workshop-userplanaccessibilitytitle">互动评价处于5阶段</span><a class="accesshide" href="#mod_workshop-userplancurrenttasks">Skip to current tasks</a><dl class="phase"><dt class="phase10 nonactive"><div><span class="phasetitle">设置阶段</span></div><dd class="phase10 nonactive phasetasks"></dd></dl><dl class="phase"><dt class="phase20 active"><div><span class="phasetitle" id="mod_workshop-userplancurrenttasks">提交作业阶段</span><div class="actions">当前阶段 <img class="icon " role="presentation" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/marked" /></div></div><dd class="phase20 active phasetasks"><ul class="tasks"><li class=""><div class="title"><span class="accesshide">Task to do </span><a href="http://e.nfu.edu.cn/mod/workshop/submission.php?cmid=1156&amp;id">上传您的作业</a></div><div class="details"></div></li><li class=" info"><div class="title"><span class="accesshide">Task info </span>上传作业截止时间: 2019年11月16日 Saturday 20:00 (今天)</div><div class="details"></div></li></ul></dd></dl><dl class="phase"><dt class="phase30 nonactive"><div><span class="phasetitle">评价阶段</span></div><dd class="phase30 nonactive phasetasks"></dd></dl><dl class="phase"><dt class="phase40 nonactive"><div><span class="phasetitle">成绩核定阶段</span></div><dd class="phase40 nonactive phasetasks"></dd></dl><dl class="phase"><dt class="phase50 nonactive"><div><span class="phasetitle">关闭</span></div><dd class="phase50 nonactive phasetasks"></dd></dl></div><div id="workshop-viewlet-instructauthors" class="collapsibleregion "><div id="workshop-viewlet-instructauthors_sizer"><div id="workshop-viewlet-instructauthors_caption" class="collapsibleregioncaption">作业说明 </div><div id="workshop-viewlet-instructauthors_inner" class="collapsibleregioninner"><div class="box generalbox instructions"><div class="no-overflow"><ul><li>请提交github或者gitee链接</li>
+<li>从分省能源数据中找出你想对比的几组省份、几组年份的值，用plotly和cufflinks完成交互可视化</li>
+<li>需要练习的功能包括：抽取数据、转置、堆叠、逆堆叠</li>
+<li>请<a class="autolink" title="下午" href="http://e.nfu.edu.cn/mod/folder/view.php?id=1098">下午</a>班的每一位同学找一位上午班的同学，利用示范图形和ta解释清楚unstack和stack的区别，以及unstack() , unstack(0), unstack(1) 的区别</li>
+</ul></div></div></div></div></div><div id="workshop-viewlet-ownsubmission" class="collapsibleregion "><div id="workshop-viewlet-ownsubmission_sizer"><div id="workshop-viewlet-ownsubmission_caption" class="collapsibleregioncaption">您的作业 </div><div id="workshop-viewlet-ownsubmission_inner" class="collapsibleregioninner"><div class="box generalbox ownsubmission"><div>您还没有提交作业</div><div class="singlebutton"><form method="get" action="http://e.nfu.edu.cn/mod/workshop/submission.php"><div><input type="submit" value="开始准备您的提交" /><input type="hidden" name="cmid" value="1156" /><input type="hidden" name="id" value="" /><input type="hidden" name="edit" value="on" /></div></form></div></div></div></div></div></div>        </section>
+
+        <aside id="block-region-side-post" class="span3 desktop-first-column block-region" data-blockregion="side-post" data-droptarget="1"><a class="skip skip-block" id="fsb-1" href="#sb-1">跳过 导航</a><div id="inst4" class="block_navigation  block" role="navigation" data-block="navigation" data-instanceid="4" aria-labelledby="instance-4-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-4-header">导航</h2></div></div><div class="content"><ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/nav_loader"><li class="type_unknown depth_1 contains_branch" aria-labelledby="label_1_1"><p class="tree_item branch canexpand navigation_node" role="treeitem" aria-expanded="true" aria-owns="random5dcfbaf1518c71_group" data-collapsible="false"><a tabindex="-1" id="label_1_1" href="http://e.nfu.edu.cn/my/">个人主页</a></p><ul id="random5dcfbaf1518c71_group" role="group"><li class="type_setting depth_2 item_with_icon" aria-labelledby="label_2_2"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_2_2" href="http://e.nfu.edu.cn/?redirect=0"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/home" /><span class="item-content-wrap">网站首页</span></a></p></li><li class="type_course depth_2 contains_branch" aria-labelledby="label_2_3"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random5dcfbaf1518c73_group"><span tabindex="-1" id="label_2_3" title="中山大学南方学院在线学习系统">网站页面</span></p><ul id="random5dcfbaf1518c73_group" role="group" aria-hidden="true"><li class="type_unknown depth_3 item_with_icon" aria-labelledby="label_3_5"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_5" href="http://e.nfu.edu.cn/blog/index.php"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">站点博客</span></a></p></li><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_6"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_6" href="http://e.nfu.edu.cn/badges/view.php?type=1"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">站点勋章</span></a></p></li><li class="type_setting depth_3 item_with_icon" aria-labelledby="label_3_7"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_7" href="http://e.nfu.edu.cn/tag/search.php"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">标签</span></a></p></li><li class="type_setting depth_3 item_with_icon" aria-labelledby="label_3_8"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_8" href="http://e.nfu.edu.cn/search/index.php"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">搜索</span></a></p></li><li class="type_custom depth_3 item_with_icon" aria-labelledby="label_3_9"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_9" href="http://e.nfu.edu.cn/calendar/view.php?view=month&amp;course=53"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/calendar" /><span class="item-content-wrap">日程管理</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_11"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_11" title="讨论区" href="http://e.nfu.edu.cn/mod/forum/view.php?id=4"><img class="icon navicon" alt="讨论区" title="讨论区" src="http://e.nfu.edu.cn/theme/image.php/adaptable/forum/1559194777/icon" /><span class="item-content-wrap">讨论区</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_12"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_12" title="网页" href="http://e.nfu.edu.cn/mod/page/view.php?id=209"><img class="icon navicon" alt="网页" title="网页" src="http://e.nfu.edu.cn/theme/image.php/adaptable/page/1559194777/icon" /><span class="item-content-wrap">从在线考试开展教育信息化：</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_13"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_13" title="文件夹" href="http://e.nfu.edu.cn/mod/folder/view.php?id=368"><img class="icon navicon" alt="文件夹" title="文件夹" src="http://e.nfu.edu.cn/theme/image.php/adaptable/folder/1559194777/icon" /><span class="item-content-wrap">常用资源：软件-教材-影片-机考通則</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_14"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_14" title="网页" href="http://e.nfu.edu.cn/mod/page/view.php?id=487"><img class="icon navicon" alt="网页" title="网页" src="http://e.nfu.edu.cn/theme/image.php/adaptable/page/1559194777/icon" /><span class="item-content-wrap">产品人及文档</span></a></p></li><li class="type_activity depth_3 item_with_icon contains_branch" aria-labelledby="label_3_15"><p class="tree_item hasicon branch" role="treeitem" id="expandable_branch_40_492" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_40_492" data-node-key="492" data-node-type="40"><a tabindex="-1" id="label_3_15" title="词汇表" href="http://e.nfu.edu.cn/mod/glossary/view.php?id=492"><img class="icon navicon" alt="词汇表" title="词汇表" src="http://e.nfu.edu.cn/theme/image.php/adaptable/glossary/1559194777/icon" /><span class="item-content-wrap">词汇表：网络新媒体</span></a></p></li><li class="type_activity depth_3 item_with_icon" aria-labelledby="label_3_16"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_3_16" title="文件夹" href="http://e.nfu.edu.cn/mod/folder/view.php?id=796"><img class="icon navicon" alt="文件夹" title="文件夹" src="http://e.nfu.edu.cn/theme/image.php/adaptable/folder/1559194777/icon" /><span class="item-content-wrap">常用资源：数据科学</span></a></p></li></ul></li><li class="type_system depth_2 contains_branch" aria-labelledby="label_2_17"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random5dcfbaf1518c714_group"><span tabindex="-1" id="label_2_17">我的课程</span></p><ul id="random5dcfbaf1518c714_group" role="group"><li class="type_unknown depth_3 contains_branch" aria-labelledby="label_3_18"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random5dcfbaf1518c715_group"><span tabindex="-1" id="label_3_18">网络与新媒体</span></p><ul id="random5dcfbaf1518c715_group" role="group"><li class="type_unknown depth_4 contains_branch" aria-labelledby="label_4_19"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="false" aria-owns="random5dcfbaf1518c716_group"><span tabindex="-1" id="label_4_19">2016级</span></p><ul id="random5dcfbaf1518c716_group" role="group" aria-hidden="true"><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_20"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_20" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_20" data-node-key="20" data-node-type="20"><a tabindex="-1" id="label_5_20" title="文献综述写作_201809" href="http://e.nfu.edu.cn/course/view.php?id=20">Lit_Review_201809</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_21"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_19" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_19" data-node-key="19" data-node-type="20"><a tabindex="-1" id="label_5_21" title="APP设计与应用_201809" href="http://e.nfu.edu.cn/course/view.php?id=19">APP_design_201809</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_22"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_18" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_18" data-node-key="18" data-node-type="20"><a tabindex="-1" id="label_5_22" title="API、机器学习与人工智能_201809" href="http://e.nfu.edu.cn/course/view.php?id=18">API_ML_AI_201809</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_23"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_15" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_15" data-node-key="15" data-node-type="20"><a tabindex="-1" id="label_5_23" title="网站运营与管理（实践）_201803" href="http://e.nfu.edu.cn/course/view.php?id=15">Web_Operations_201803</a></p></li><li class="type_course depth_5 contains_branch" aria-labelledby="label_5_24"><p class="tree_item branch" role="treeitem" id="expandable_branch_20_6" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_20_6" data-node-key="6" data-node-type="20"><a tabindex="-1" id="label_5_24" title="Python语言_201702" href="http://e.nfu.edu.cn/course/view.php?id=6">Python_201702</a></p></li></ul></li><li class="type_course depth_4 contains_branch" aria-labelledby="label_4_25"><p class="tree_item branch canexpand" role="treeitem" aria-expanded="true" aria-owns="random5dcfbaf1518c717_group"><a tabindex="-1" id="label_4_25" title="交互式数据可视化" href="http://e.nfu.edu.cn/course/view.php?id=53">Interactive_Visual_201908</a></p><ul id="random5dcfbaf1518c717_group" role="group"><li class="type_container depth_5 contains_branch" aria-labelledby="label_5_26"><p class="tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random5dcfbaf1518c718_group"><a tabindex="-1" id="label_5_26" href="http://e.nfu.edu.cn/user/index.php?id=53">成员</a></p><ul id="random5dcfbaf1518c718_group" role="group" aria-hidden="true"><li class="type_setting depth_6 item_with_icon" aria-labelledby="label_6_27"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_27" href="http://e.nfu.edu.cn/blog/index.php?courseid=53"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">课程博客</span></a></p></li><li class="type_user depth_6 item_with_icon" aria-labelledby="label_6_28"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_28" href="http://e.nfu.edu.cn/user/view.php?id=121&amp;course=53"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">网新16级1班卢佳燕</span></a></p></li></ul></li><li class="type_setting depth_5 item_with_icon" aria-labelledby="label_5_29"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_29" href="http://e.nfu.edu.cn/badges/view.php?type=2&amp;id=53"><img class="icon navicon" alt="勋章" title="勋章" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/badge" /><span class="item-content-wrap">勋章</span></a></p></li><li class="type_setting depth_5 item_with_icon" aria-labelledby="label_5_30"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_30" href="http://e.nfu.edu.cn/admin/tool/lp/coursecompetencies.php?courseid=53"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/competencies" /><span class="item-content-wrap">能力</span></a></p></li><li class="type_setting depth_5 item_with_icon" aria-labelledby="label_5_31"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_5_31" href="http://e.nfu.edu.cn/grade/report/index.php?id=53"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/grades" /><span class="item-content-wrap">成绩</span></a></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_32"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_851" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_851" data-node-key="851" data-node-type="30"><span tabindex="-1" id="label_5_32">常规</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_33"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_852" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_852" data-node-key="852" data-node-type="30"><span tabindex="-1" id="label_5_33">第一周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_34"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_853" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_853" data-node-key="853" data-node-type="30"><span tabindex="-1" id="label_5_34">第二周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_35"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_854" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_854" data-node-key="854" data-node-type="30"><span tabindex="-1" id="label_5_35">第三周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_36"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_855" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_855" data-node-key="855" data-node-type="30"><span tabindex="-1" id="label_5_36">第四周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_37"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_856" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_856" data-node-key="856" data-node-type="30"><span tabindex="-1" id="label_5_37">第五周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_38"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_857" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_857" data-node-key="857" data-node-type="30"><span tabindex="-1" id="label_5_38">第六周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_39"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_858" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_858" data-node-key="858" data-node-type="30"><span tabindex="-1" id="label_5_39">第七周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_40"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_859" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_859" data-node-key="859" data-node-type="30"><span tabindex="-1" id="label_5_40">第八周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_41"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_860" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_860" data-node-key="860" data-node-type="30"><span tabindex="-1" id="label_5_41">第九周 Mid-term</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_42"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_861" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_861" data-node-key="861" data-node-type="30"><span tabindex="-1" id="label_5_42">第十周 Plotly 第一讲</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_43"><p class="tree_item branch" role="treeitem" aria-expanded="true" aria-owns="random5dcfbaf1518c724_group"><span tabindex="-1" id="label_5_43">第十一周</span></p><ul id="random5dcfbaf1518c724_group" role="group"><li class="type_activity depth_6 item_with_icon" aria-labelledby="label_6_45"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_45" title="文件" href="http://e.nfu.edu.cn/mod/resource/view.php?id=1152"><img class="icon navicon" alt="文件" title="文件" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/f/text-24" /><span class="item-content-wrap">分省数据_salary</span></a></p></li><li class="type_activity depth_6 item_with_icon" aria-labelledby="label_6_47"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_47" title="文件" href="http://e.nfu.edu.cn/mod/resource/view.php?id=1154"><img class="icon navicon" alt="文件" title="文件" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/f/text-24" /><span class="item-content-wrap">本周作业数据</span></a></p></li><li class="type_activity depth_6 item_with_icon" aria-labelledby="label_6_48"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_6_48" title="文件" href="http://e.nfu.edu.cn/mod/resource/view.php?id=1155"><img class="icon navicon" alt="文件" title="文件" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/f/html-24" /><span class="item-content-wrap">codePM</span></a></p></li><li class="type_activity depth_6 item_with_icon contains_branch current_branch" aria-labelledby="label_6_50"><p class="tree_item hasicon branch active_tree_node" role="treeitem" aria-expanded="true" aria-owns="random5dcfbaf1518c728_group"><a tabindex="-1" id="label_6_50" title="互动评价" href="http://e.nfu.edu.cn/mod/workshop/view.php?id=1156"><img class="icon navicon" alt="互动评价" title="互动评价" src="http://e.nfu.edu.cn/theme/image.php/adaptable/workshop/1559194777/icon" /><span class="item-content-wrap">分省能源数据可视化练习</span></a></p><ul id="random5dcfbaf1518c728_group" role="group"><li class="type_custom depth_7 item_with_icon" aria-labelledby="label_7_51"><p class="tree_item hasicon" role="treeitem"><a tabindex="-1" id="label_7_51" href="http://e.nfu.edu.cn/mod/workshop/submission.php?cmid=1156"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/navigationitem" /><span class="item-content-wrap">我的作业</span></a></p></li></ul></li></ul></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_52"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_863" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_863" data-node-key="863" data-node-type="30"><span tabindex="-1" id="label_5_52">第十二周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_53"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_864" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_864" data-node-key="864" data-node-type="30"><span tabindex="-1" id="label_5_53">第十三周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_54"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_865" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_865" data-node-key="865" data-node-type="30"><span tabindex="-1" id="label_5_54">第十四周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_55"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_866" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_866" data-node-key="866" data-node-type="30"><span tabindex="-1" id="label_5_55">第十五周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_56"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_867" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_867" data-node-key="867" data-node-type="30"><span tabindex="-1" id="label_5_56">第十六周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_57"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_868" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_868" data-node-key="868" data-node-type="30"><span tabindex="-1" id="label_5_57">第十七周</span></p></li><li class="type_structure depth_5 contains_branch" aria-labelledby="label_5_58"><p class="tree_item branch" role="treeitem" id="expandable_branch_30_869" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_30_869" data-node-key="869" data-node-type="30"><span tabindex="-1" id="label_5_58">第十八周</span></p></li></ul></li></ul></li></ul></li><li class="type_system depth_2 contains_branch" aria-labelledby="label_2_59"><p class="tree_item branch" role="treeitem" id="expandable_branch_0_courses" aria-expanded="false" data-requires-ajax="true" data-loaded="false" data-node-id="expandable_branch_0_courses" data-node-key="courses" data-node-type="0"><a tabindex="-1" id="label_2_59" href="http://e.nfu.edu.cn/course/index.php">课程</a></p></li></ul></li></ul></div></div><span class="skip-block-to" id="sb-1"></span><a class="skip skip-block" id="fsb-2" href="#sb-2">跳过 系统管理</a><div id="inst5" class="block_settings  block" role="navigation" data-block="settings" data-instanceid="5" aria-labelledby="instance-5-header" data-dockable="1"><div class="header"><div class="title"><div class="block_action"></div><h2 id="instance-5-header">系统管理</h2></div></div><div class="content"><div id="settingsnav" class="box block_tree_box"><ul class="block_tree list" role="tree" data-ajax-loader="block_navigation/site_admin_loader"><li class="type_course depth_1 contains_branch" tabindex="-1" aria-labelledby="label_1_1"><p class="tree_item root_node tree_item branch" role="treeitem" aria-expanded="false" aria-owns="random5dcfbaf1518c730_group"><span tabindex="0">课程管理</span></p><ul id="random5dcfbaf1518c730_group" role="group" aria-hidden="true"><li class="type_setting depth_2 item_with_icon" tabindex="-1" aria-labelledby="label_2_1"><p class="tree_item hasicon tree_item leaf" role="treeitem"><a href="http://e.nfu.edu.cn/course/view.php?id=53&amp;return=%2Fmod%2Fworkshop%2Fview.php%3Fid%3D1156&amp;sesskey=y3YKCwNwif&amp;edit=on"><img class="icon navicon" alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/edit" />打开编辑功能</a></p></li></ul></li></ul></div></div></div><span class="skip-block-to" id="sb-2"></span></aside>    </div>
+</div>
+
+<div
+    id="message-drawer-5dcfbaf15b0ed5dcfbaf1518c737"
+    class="message-drawer bg-light hidden"
+    aria-expanded="false"
+    aria-hidden="true"
+    data-region="message-drawer"
+    role="region"
+>
+    <div class="drawer-top p-2 border-bottom bg-secondary text-right">
+        <a id="message-drawer-close-5dcfbaf15b0ed5dcfbaf1518c737" class="" href="#">
+            <img class="icon " alt="消息菜单开关" title="消息菜单开关" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/window_close" />
+        </a>
+    </div>
+    <div class="header-container position-relative" data-region="header-container">
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-contacts">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch">
+                    <a class="h-100 d-flex align-items-center mr-2" href="#" data-route-back>
+                        <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed_rtl" /></span>
+                        <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" /></span>                    </a>
+                </div>
+                <div>
+                    联系人
+                </div>
+                <div class="ml-auto">
+                    <a href="#" data-route="view-search">
+                        <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/a/search" />
+                    </a>
+                </div>
+            </div>
+        </div>        
+        <div
+            class="hidden bg-white position-relative border-bottom px-2 py-2"
+            aria-hidden="true"
+            data-region="view-conversation"
+        >
+            <div class="hidden" data-region="header-content"></div>
+            <div class="hidden" data-region="header-edit-mode">
+                
+                <div class="d-flex p-2 align-items-center">
+                    选择的消息
+                    <span class="ml-1" data-region="message-selected-court">1</span>
+                    <button type="button" class="ml-auto close" aria-label="" data-action="cancel-edit-mode">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div data-region="header-placeholder">
+                <div class="d-flex">
+                    <div class="align-self-stretch" >
+                        <a class="h-100 mr-2 d-flex align-items-center" href="#" data-route-back>
+                            <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed_rtl" /></span>
+                            <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" /></span>                        </a>
+                    </div>
+                    <div
+                        class="ml-2 rounded-circle bg-pulse-grey align-self-center"
+                        style="height: 38px; width: 38px"
+                    >
+                    </div>
+                    <div class="ml-2 " style="flex: 1">
+                        <div
+                            class="mt-1 bg-pulse-grey w-75"
+                            style="height: 16px;"
+                        >
+                        </div>
+                    </div>
+                    <div
+                        class="ml-2 bg-pulse-grey align-self-center"
+                        style="height: 16px; width: 20px"
+                    >
+                    </div>
+                </div>
+            </div>
+            <div
+                class="hidden position-absolute"
+                data-region="confirm-dialogue-container"
+                style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+            ></div>
+        </div>        <div class="border-bottom px-2 py-3" aria-hidden="false" data-region="view-overview">
+            <div class="d-flex align-items-center">
+                <div class="input-prepend d-flex flex-grow m-0">
+                    <span class="add-on bg-white pr-0">
+                        <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/a/search" />
+                    </span>
+                    <input
+                        type="text"
+                        class="form-control border-left-0 searchinput"
+                        placeholder="搜索"
+                        aria-label="搜索"
+                        data-region="view-overview-search-input"
+                    >
+                </div>
+                <div class="ml-2">
+                    <a
+                        href="#"
+                        data-route="view-settings"
+                        data-route-param="121"
+                    >
+                        <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/edit" />
+                    </a>
+                </div>
+            </div>
+            <div class="text-right mt-3">
+                <a href="#" data-route="view-contacts">
+                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/user" />
+                    联系人
+                    <span class="badge bg-primary ml-2 hidden" data-region="contact-request-count">
+                        0
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hidden border-bottom px-2 py-3 view-search" aria-hidden="true" data-region="view-search">
+            <div class="d-flex align-items-center">
+                <a
+                    class="mr-2 align-self-stretch d-flex align-items-center"
+                    href="#"
+                    data-route-back
+                    data-action="cancel-search"
+                >
+                    <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed_rtl" /></span>
+                    <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" /></span>                </a>
+                <div class="input-append m-0 d-flex flex-grow">
+                    <input
+                        type="text"
+                        class="form-control border-right-0 searchinput"
+                        placeholder="搜索"
+                        aria-label="搜索"
+                        data-region="search-input"
+                    >
+                    <button
+                        class="btn m-0"
+                        type="button"
+                        data-action="search"
+                    >
+                        <span data-region="search-icon-container">
+                            <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/a/search" />
+                        </span>
+                        <span class="hidden" data-region="loading-icon-container">
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>        
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-settings">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch" >
+                    <a class="h-100 d-flex mr-2 align-items-center" href="#" data-route-back>
+                        <span class="dir-rtl-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed_rtl" /></span>
+                        <span class="dir-ltr-hide"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" /></span>                    </a>
+                </div>
+                <div>
+                    设置
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-container position-relative" data-region="body-container">
+        
+        <div
+            class="hidden"
+            data-region="view-contact"
+            aria-hidden="true"
+        >
+            <div class="p-2 pt-3" data-region="content-container"></div>
+        </div>        <div class="hidden h-100" aria-hidden="true" data-region="view-contacts" data-user-id="121">
+            <div class="d-flex flex-column h-100">
+                <div class="p-3 border-bottom">
+                    <ul class="nav nav-pills d-flex m-0" role="tablist">
+                        <li class="nav-item w-50 align-self-stretch text-center active">
+                            <a
+                                id="contacts-tab-5dcfbaf15b0ed5dcfbaf1518c737"
+                                class="nav-link"
+                                href="#contacts-tab-panel-5dcfbaf15b0ed5dcfbaf1518c737"
+                                data-toggle="tab"
+                                data-action="show-contacts-section"
+                                role="tab"
+                                aria-controls="contacts-tab-panel-5dcfbaf15b0ed5dcfbaf1518c737"
+                                aria-selected="true"
+                            >
+                                联系人
+                            </a>
+                        </li>
+                        <li class="nav-item w-50 text-center">
+                            <a
+                                id="requests-tab-5dcfbaf15b0ed5dcfbaf1518c737"
+                                class="nav-link"
+                                href="#requests-tab-panel-5dcfbaf15b0ed5dcfbaf1518c737"
+                                data-toggle="tab"
+                                data-action="show-requests-section"
+                                role="tab"
+                                aria-controls="requests-tab-panel-5dcfbaf15b0ed5dcfbaf1518c737"
+                                aria-selected="false"
+                            >
+                                请求
+                                <span class="badge bg-primary ml-2 hidden" data-region="contact-request-count">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content d-flex flex-column h-100">
+                            <div
+            class="tab-pane fade in active h-100"
+            style="overflow-y: auto"
+            aria-live="polite"
+            data-region="lazy-load-list"
+            data-user-id="121"
+                                id="contacts-tab-panel-5dcfbaf15b0ed5dcfbaf1518c737"
+                    data-section="contacts"
+                    role="tabpanel"
+                    aria-labelledby="contacts-tab-5dcfbaf15b0ed5dcfbaf1518c737"
+
+        >
+            <div class="onepix">
+            </div>
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                没有联系人
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+            </div>
+        </div>
+        
+                            <div
+            class="tab-pane fade h-100"
+            style="overflow-y: auto"
+            aria-live="polite"
+            data-region="lazy-load-list"
+            data-user-id="121"
+                                id="requests-tab-panel-5dcfbaf15b0ed5dcfbaf1518c737"
+                    data-section="requests"
+                    role="tabpanel"
+                    aria-labelledby="requests-tab-5dcfbaf15b0ed5dcfbaf1518c737"
+
+        >
+            <div class="onepix">
+            </div>
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                没有联系人请求
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>        
+        <div
+            class="view-conversation hidden h-100"
+            aria-hidden="true"
+            data-region="view-conversation"
+            data-user-id="121"
+            data-midnight="1573833600"
+            style="overflow-y: auto; overflow-x: hidden"
+        >
+            <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                <div class="p-3 text-center hidden" data-region="contact-request-sent-message-container">
+                    <p class="m-0">联系请求已发送</p>
+                    <p class="font-italic font-weight-light" data-region="text"></p>
+                </div>
+                <div class="content-message-container hidden h-100 px-2 pb-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                    <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</div>
+                </div>
+                <div class="p-4 w-100 h-100 hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                    
+                    <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                        <h3 class="h6 hidden" data-region="dialogue-header"></h3>
+                        <p class="text-muted" data-region="dialogue-text"></p>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                            <span data-region="dialogue-button-text">版块</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                            <span data-region="dialogue-button-text">解除屏蔽</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                            <span data-region="dialogue-button-text">免除</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                            <span data-region="dialogue-button-text">添加</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                            <span data-region="dialogue-button-text">删除</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                            <span data-region="dialogue-button-text">删除</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                            <span data-region="dialogue-button-text">Send contact request</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                            <span data-region="dialogue-button-text">接受并添加到联系人</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                            <span data-region="dialogue-button-text">拒绝</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">取消</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                    <div class="h-100 d-flex flex-column">
+                        <div
+                            class="px-2 pb-2 pt-0 bg-light h-100"
+                            style="overflow-y: auto"
+                        >
+                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                        </div>
+                    </div>                </div>
+            </div>
+        </div>
+        
+        <div
+            class="hidden"
+            aria-hidden="true"
+            data-region="view-group-info"
+        >
+            <div
+                class="pt-3 h-100 d-flex flex-column"
+                data-region="group-info-content-container"
+                style="overflow-y: auto"
+            ></div>
+        </div>        <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview" data-user-id="121">
+            <div id="message-drawer-view-overview-container" class="d-flex flex-column h-100" style="overflow-y: auto">
+                    
+                    <div
+                        class="accordion-group section border-0 "
+                        data-region="view-overview-favourites"
+                    >
+                        <div id="view-overview-favourites-toggle" class="accordion-heading" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 m-0 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-parent="#message-drawer-view-overview-container"
+                                data-target="#view-overview-favourites-target"
+                                aria-expanded="false"
+                                aria-controls="view-overview-favourites-target"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" />
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/expanded" />
+                                </span>
+                                <strong>带星号标记的</strong>
+                                <small class="hidden ml-1" data-region="section-total-count-container">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class=" accordion-body collapse border-bottom "
+                        style="overflow-y: auto"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="121"
+                                    id="view-overview-favourites-target"
+            aria-labelledby="view-overview-favourites-toggle"
+            data-parent="#message-drawer-view-overview-container"
+
+                    >
+                        <div class="onepix">
+                        </div>
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">没有用星号标记的会话</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div
+                        class="accordion-group section border-0 "
+                        data-region="view-overview-group-messages"
+                    >
+                        <div id="view-overview-group-messages-toggle" class="accordion-heading" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 m-0 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-parent="#message-drawer-view-overview-container"
+                                data-target="#view-overview-group-messages-target"
+                                aria-expanded="false"
+                                aria-controls="view-overview-group-messages-target"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" />
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/expanded" />
+                                </span>
+                                <strong>群组</strong>
+                                <small class="hidden ml-1" data-region="section-total-count-container">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class=" accordion-body collapse border-bottom "
+                        style="overflow-y: auto"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="121"
+                                    id="view-overview-group-messages-target"
+            aria-labelledby="view-overview-group-messages-toggle"
+            data-parent="#message-drawer-view-overview-container"
+
+                    >
+                        <div class="onepix">
+                        </div>
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">没有群组会话</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div
+                        class="accordion-group section border-0 "
+                        data-region="view-overview-messages"
+                    >
+                        <div id="view-overview-messages-toggle" class="accordion-heading" data-region="toggle">
+                            <button
+                                class="btn btn-link w-100 text-left p-2 m-0 d-flex align-items-center overview-section-toggle collapsed"
+                                data-toggle="collapse"
+                                data-parent="#message-drawer-view-overview-container"
+                                data-target="#view-overview-messages-target"
+                                aria-expanded="false"
+                                aria-controls="view-overview-messages-target"
+                            >
+                                <span class="collapsed-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/collapsed" />
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/t/expanded" />
+                                </span>
+                                <strong>个人</strong>
+                                <small class="hidden ml-1" data-region="section-total-count-container">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div
+                        class=" accordion-body collapse border-bottom "
+                        style="overflow-y: auto"
+                        aria-live="polite"
+                        data-region="lazy-load-list"
+                        data-user-id="121"
+                                    id="view-overview-messages-target"
+            aria-labelledby="view-overview-messages-toggle"
+            data-parent="#message-drawer-view-overview-container"
+
+                    >
+                        <div class="onepix">
+                        </div>
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">没有个人会话</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                            <span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div
+            data-region="view-search"
+            aria-hidden="true"
+            class="h-100 hidden"
+            data-user-id="121"
+            data-users-offset="0"
+            data-messages-offset="0"
+            style="overflow-y: auto"
+        >
+            <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                
+                <div class="d-flex flex-column">
+                    <div class="mb-3 bg-white" data-region="all-contacts-container">
+                        <div data-region="contacts-container"  class="pt-2">
+                            <h4 class="h6 px-2">联系人</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div data-region="non-contacts-container" class="pt-2 border-top">
+                            <h4 class="h6 px-2">不是联系人</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-users">
+                                <span data-region="button-text">加载更多</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white" data-region="messages-container">
+                        <h4 class="h6 px-2 pt-2">消息</h4>
+                        <div class="list-group" data-region="list"></div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                <span data-region="button-text">加载更多</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="hidden p-3 text-center" data-region="no-results-container">没有结果</p>
+                </div>            </div>
+            <div class="hidden" data-region="loading-placeholder">
+                <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</div>
+            </div>
+            <div class="p-3 text-center" data-region="empty-message-container">
+                <p>搜索用户和消息</p>
+            </div>
+        </div>        
+        <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+            <div class="hidden" data-region="content-container">
+                
+                <div data-region="settings" class="p-3">
+                    <h3 class="h6 font-weight-bold">隐私</h3>
+                    <p>允许给我发送消息</p>
+                    <div data-preference="blocknoncontacts" class="mb-3">
+                            <div class="custom-control custom-radio mb-2">
+                                <input
+                                    type="radio"
+                                    name="message_blocknoncontacts"
+                                    class="custom-control-input"
+                                    id="block-noncontacts-5dcfbaf15b0ed5dcfbaf1518c737-1"
+                                    value="1"
+                                >
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5dcfbaf15b0ed5dcfbaf1518c737-1">
+                                    仅联系人
+                                </label>
+                            </div>
+                            <div class="custom-control custom-radio mb-2">
+                                <input
+                                    type="radio"
+                                    name="message_blocknoncontacts"
+                                    class="custom-control-input"
+                                    id="block-noncontacts-5dcfbaf15b0ed5dcfbaf1518c737-0"
+                                    value="0"
+                                >
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5dcfbaf15b0ed5dcfbaf1518c737-0">
+                                    联系人和课程同伴
+                                </label>
+                            </div>
+                    </div>
+                
+                    <div class="hidden" data-region="notification-preference-container">
+                        <h3 class="mb-2 mt-4 h6 font-weight-bold">通知偏好</h3>
+                    </div>
+                
+                    <h3 class="mb-2 mt-4 h6 font-weight-bold">常规项</h3>
+                    <div data-preference="entertosend">
+                        <span class="switch">
+                            <input type="checkbox"
+                                id="enter-to-send-5dcfbaf15b0ed5dcfbaf1518c737"
+                                
+                            >
+                            <label for="enter-to-send-5dcfbaf15b0ed5dcfbaf1518c737">
+                                按回车键发送
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div data-region="placeholder-container">
+                
+                <div class="d-flex flex-column p-3">
+                    <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                    <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-4">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                </div>            </div>
+        </div>    </div>
+    <div class="footer-container position-relative" data-region="footer-container">
+        
+        <div
+            class="hidden border-top bg-white position-relative"
+            aria-hidden="true"
+            data-region="view-conversation"
+            data-enter-to-send="0"
+        >
+            <div class="hidden p-2" data-region="content-messages-footer-container">
+                
+                <div class="d-flex mt-1">
+                    <textarea
+                        dir="auto"
+                        data-region="send-message-txt"
+                        class="form-control bg-light m-0 flex-grow"
+                        rows="3"
+                        data-auto-rows
+                        data-min-rows="3"
+                        data-max-rows="5"
+                        role="textbox"
+                        aria-label="写一条消息..."
+                        placeholder="写一条消息..."
+                        style="resize: none"
+                    ></textarea>
+                    <button
+                        class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto"
+                        aria-label="发送消息"
+                        data-action="send-message"
+                    >
+                        <span data-region="send-icon-container"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/sendmessage" /></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden p-2" data-region="content-messages-footer-edit-mode-container">
+                
+                <div class="d-flex p-3">
+                    <button
+                        class="btn btn-link btn-icon my-1 icon-size-4 ml-auto"
+                        data-action="delete-selected-messages"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="删除选中的消息"
+                    >
+                        <span data-region="icon-container"><img class="icon " alt="" aria-hidden="true" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/trash" /></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                        <span class="sr-only">删除选中的消息</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-contact-container">
+                
+                <div class="p-3 bg-white">
+                    <p data-region="title"></p>
+                    <p class="text-muted" data-region="text"></p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                        <span data-region="dialogue-button-text">Send contact request</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-unblock-container">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">已经屏蔽了这个用户。</p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                        <span data-region="dialogue-button-text">对用户解决屏蔽</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><img class="icon " alt="载入中" title="载入中" src="http://e.nfu.edu.cn/theme/image.php/adaptable/core/1559194777/i/loading" /></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-unable-to-message">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">You are unable to message this user</p>
+                </div>
+            </div>
+            <div class="p-2" data-region="placeholder-container">
+                <div class="d-flex">
+                    <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                    <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                </div>            </div>
+            <div
+                class="hidden position-absolute"
+                data-region="confirm-dialogue-container"
+                style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+            ></div>
+        </div>    </div>
+</div>
+<footer id="page-footer">
+
+<div id="course-footer"></div>
+                <div class="container blockplace1"><div class="row-fluid"><div class="left-col span3">         </div><div class="left-col span3">         </div><div class="left-col span3">         </div><div class="left-col span3">         </div></div></div>        <div class="container">
+            <div class="row-fluid">
+                <div class="span12 pagination-centered">
+<div class="socialbox"></div>                </div>
+            </div>
+        </div>
+
+    <div class="info container2 clearfix">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span4">
+                </div>
+
+                <div class="span4 helplink">
+                </div>
+                <div class="span4">
+                    <div class="tool_dataprivacy"><a href="http://e.nfu.edu.cn/admin/tool/dataprivacy/summary.php">Data retention summary</a></div><a href="https://download.moodle.org/mobile?version=2018120302.12&amp;lang=zh_cn&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">获取移动应用</a>                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<a class="back-to-top" href="#top" ><i class="fa fa-angle-up "></i></a>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'http://e.nfu.edu.cn/lib/requirejs.php/1559194777/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'http://e.nfu.edu.cn/lib/javascript.php/1559194777/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'http://e.nfu.edu.cn/lib/javascript.php/1559194777/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'http://e.nfu.edu.cn/lib/javascript.php/1559194777/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/lib/javascript.php/1559194777/lib/requirejs/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "http://e.nfu.edu.cn/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("zh-CN",{
+ "Play": "播放",
+ "Pause": "暂停",
+ "Current Time": "当前时间",
+ "Duration Time": "时长",
+ "Remaining Time": "剩余时间",
+ "Stream Type": "媒体流类型",
+ "LIVE": "直播",
+ "Loaded": "加载完毕",
+ "Progress": "进度",
+ "Fullscreen": "全屏",
+ "Non-Fullscreen": "退出全屏",
+ "Mute": "静音",
+ "Unmute": "取消静音",
+ "Playback Rate": "播放速度",
+ "Subtitles": "字幕",
+ "subtitles off": "关闭字幕",
+ "Captions": "内嵌字幕",
+ "captions off": "关闭内嵌字幕",
+ "Chapters": "节目段落",
+ "Close Modal Dialog": "关闭弹窗",
+ "Descriptions": "描述",
+ "descriptions off": "关闭描述",
+ "Audio Track": "音轨",
+ "You aborted the media playback": "视频播放被终止",
+ "A network error caused the media download to fail part-way.": "网络错误导致视频下载中途失败。",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "视频因格式不支持或者服务器或网络的问题无法加载。",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "由于视频文件损坏或是该视频使用了你的浏览器不支持的功能，播放终止。",
+ "No compatible source was found for this media.": "无法找到此视频兼容的源。",
+ "The media is encrypted and we do not have the keys to decrypt it.": "视频已加密，无法解密。",
+ "Play Video": "播放视频",
+ "Close": "关闭",
+ "Modal Window": "弹窗",
+ "This is a modal window": "这是一个弹窗",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "可以按ESC按键或启用关闭按钮来关闭此弹窗。",
+ ", opens captions settings dialog": ", 开启标题设置弹窗",
+ ", opens subtitles settings dialog": ", 开启字幕设置弹窗",
+ ", opens descriptions settings dialog": ", 开启描述设置弹窗",
+ ", selected": ", 选择"
+});
+
+    });
+});;
+require(["theme_adaptable/bsoptions"], function(amd) { amd.init(false); });;
+require(["block_navigation/navblock"], function(amd) { amd.init("4"); });;
+require(["block_settings/settingsblock"], function(amd) { amd.init("5", null); });;
+
+require(['core/yui'], function(Y) {
+    M.util.init_skiplink(Y);
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-5dcfbaf1578205dcfbaf1518c733');
+    Popover.init(toggle);
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_drawer',
+    'core_message/message_popover'
+],
+function(
+    $,
+    MessageDrawer,
+    Popover
+) {
+
+    var root = $('#message-drawer-5dcfbaf15b0ed5dcfbaf1518c737');
+    MessageDrawer.init(root);
+
+    var toggle = $('#message-drawer-close-5dcfbaf15b0ed5dcfbaf1518c737');
+    Popover.init(toggle);
+});
+;
+require(["mod_workshop/workshopview"], function(amd) { amd.init(); });;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });;
+require(["core/page_global"], function(amd) { amd.init(); });
+});
+//]]>
+</script>
+<script type="text/javascript" src="http://e.nfu.edu.cn/theme/javascript.php/adaptable/1559194777/footer"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u6700\u540e\u4fee\u6539","name":"\u540d\u79f0","error":"\u9519\u8bef","info":"\u4fe1\u606f","yes":"\u662f","no":"\u5426","viewallcourses":"\u67e5\u770b\u6240\u6709\u8bfe\u7a0b","cancel":"\u53d6\u6d88","confirm":"\u786e\u8ba4","areyousure":"\u4f60\u786e\u5b9a\u5417\uff1f","closebuttontitle":"\u5173\u95ed","unknownerror":"\u672b\u77e5\u9519\u8bef"},"repository":{"type":"\u7c7b\u578b","size":"\u5927\u5c0f","invalidjson":"\u65e0\u6548\u7684JSON\u5b57\u7b26\u4e32","nofilesattached":"\u6ca1\u6709\u9644\u4ef6","filepicker":"\u6587\u4ef6\u9009\u62e9\u5668","logout":"\u767b\u51fa","nofilesavailable":"\u6ca1\u6709\u53ef\u7528\u6587\u4ef6","norepositoriesavailable":"\u62b1\u6b49\uff0c\u60a8\u4f7f\u7528\u7684\u5bb9\u5668\u90fd\u4e0d\u80fd\u8fd4\u56de\u7b26\u5408\u9700\u8981\u7684\u683c\u5f0f\u7684\u6587\u4ef6\u3002","fileexistsdialogheader":"\u6587\u4ef6\u5df2\u5b58\u5728","fileexistsdialog_editor":"\u60a8\u6b63\u7f16\u8f91\u7684\u6587\u672c\u7684\u9644\u4ef6\u4e2d\u5df2\u7ecf\u6709\u4e00\u4e2a\u540c\u540d\u6587\u4ef6\u3002","fileexistsdialog_filemanager":"\u5df2\u7ecf\u6709\u4e00\u4e2a\u540c\u540d\u6587\u4ef6","renameto":"\u91cd\u547d\u540d\u4e3a\u201c{$a}\u201d","referencesexist":"\u6709 {$a} \u4e2a\u522b\u540d\u6216\u5feb\u6377\u65b9\u5f0f\u5f15\u7528\u6b64\u6587\u4ef6","select":"\u9009\u62e9"},"admin":{"confirmdeletecomments":"\u60a8\u5c06\u5220\u9664\u8bc4\u8bba\uff0c\u786e\u5b9a\u5417\uff1f","confirmation":"\u786e\u8ba4"},"block":{"addtodock":"\u79fb\u5230\u505c\u9760\u680f","undockitem":"\u79fb\u8d70\u6b64\u9879","dockblock":"\u505c\u9760 {$a} \u7248\u5757","undockblock":"\u79fb\u8d70 {$a} \u7248\u5757","undockall":"\u5168\u90e8\u79fb\u8d70","hidedockpanel":"\u9690\u85cf\u505c\u9760\u680f","hidepanel":"\u9690\u85cf\u680f\u4f4d"},"langconfig":{"thisdirectionvertical":"btt"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-core-dock-loader",function() {M.core.dock.loader.initLoader();
+});
+Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"zh-hans"});
+});
+M.util.help_popups.setup(Y);
+M.util.init_block_hider(Y, {"id":"inst4","title":"\u5bfc\u822a","preference":"block4hidden","tooltipVisible":"\u9690\u85cf\u5bfc\u822a\u7248\u5757","tooltipHidden":"\u663e\u793a \u5bfc\u822a \u7248\u5757"});
+M.util.init_block_hider(Y, {"id":"inst5","title":"\u7cfb\u7edf\u7ba1\u7406","preference":"block5hidden","tooltipVisible":"\u9690\u85cf\u7cfb\u7edf\u7ba1\u7406\u7248\u5757","tooltipHidden":"\u663e\u793a \u7cfb\u7edf\u7ba1\u7406 \u7248\u5757"});
+M.util.init_collapsible_region(Y, "workshop-viewlet-instructauthors", false, "\u70b9\u51fb\u6765\u5c55\u5f00\u6216\u6298\u53e0");
+M.util.init_collapsible_region(Y, "workshop-viewlet-ownsubmission", false, "\u70b9\u51fb\u6765\u5c55\u5f00\u6216\u6298\u53e0");
+ M.util.js_pending('random5dcfbaf1518c740'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5dcfbaf1518c740'); });
+})();
+//]]>
+</script>
+
+</div>
+
+
+</body>
+</html>
